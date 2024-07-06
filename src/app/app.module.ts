@@ -1,26 +1,22 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { COMPONENTS } from './shared/components';
-import { HomeComponent } from './modules/home/home.component';
-import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { RouterModule } from '@angular/router';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HomeComponent } from './home/home.component';
+import { COMPONENTS } from './shared/components';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
   declarations: [
     AppComponent,
-    COMPONENTS,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [
-    provideClientHydration(),
-    provideHttpClient(withFetch())
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

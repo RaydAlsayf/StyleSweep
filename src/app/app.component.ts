@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguageService } from './shared/services/language/language.service';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { Router, NavigationEnd } from '@angular/router';
+import { LanguageService } from './services/language/language.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-  constructor(private languageService: LanguageService, private router: Router) { }
-
-  title = 'StyleSweep';
+  constructor(
+    private languageService: LanguageService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    console.log('Hello, StyleSweep');
-
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -32,4 +30,3 @@ export class AppComponent implements OnInit {
     this.languageService.toggleLanguage();
   }
 }
-

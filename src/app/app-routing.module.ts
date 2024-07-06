@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LanguageGuard } from './shared/services/language/language.guard';
-import { LanguageResolver } from './shared/services/language/language.resolver';
-import { HomeComponent } from './modules/home/home.component';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { LanguageGuard } from './services/language/language.guard';
+import { LanguageResolver } from './services/language/language.resolver';
+import { HomeComponent } from './home/home.component';
+import { PageTowComponent } from './page-tow/page-tow.component';
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: '',
     redirectTo: 'ar/home',
@@ -13,27 +14,25 @@ export const routes: Routes = [
   {
     path: ':lang',
     canActivate: [LanguageGuard],
-    resolve: {lang: LanguageResolver},
+    resolve: { lang: LanguageResolver },
     children: [
       {
         path: 'home',
         component: HomeComponent
       },
-      // Add more routes here
       {
-        path: '**',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      }
+        path: 'page-two',
+        component: PageTowComponent
+      },
+      // Add other routes here
+      { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]
   },
-  {
-    path: '**', redirectTo: 'ar/home', pathMatch: 'full'
-  }
+  { path: '**', redirectTo: 'ar/home', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules, scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
