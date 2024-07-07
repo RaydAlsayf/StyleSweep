@@ -18,3 +18,13 @@ body {
 	font-family: Lato;
 	color: white;	
 }
+
+html[dir="rtl"] .navbar-nav {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  
+  html[dir="ltr"] .navbar-nav {
+    margin-left: 0;
+    margin-right: auto;
+  }
