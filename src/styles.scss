@@ -1,30 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     background-color: #f5f5f5;
 }
 
 body {
-	background: url(https://images.unsplash.com/photo-1467321440926-b06b94a6a167?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=1aaa58577d74d66a31636d2212b9e68a);
-	background-size: cover;
-	background-position: center;
-	font-family: Lato;
-	color: white;	
+    background: url(https://images.unsplash.com/photo-1467321440926-b06b94a6a167?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=1aaa58577d74d66a31636d2212b9e68a);
+    background-size: cover;
+    background-position: center;
+    font-family: Lato;
+    color: white;
 }
 
-html[dir="rtl"] .navbar-nav {
-    margin-right: 0;
-    margin-left: auto;
-  }
-  
-  html[dir="ltr"] .navbar-nav {
-    margin-left: 0;
-    margin-right: auto;
-  }
+/* rtl:begin:options: {
+  "autoRename": true,
+  "stringMap":[ {
+    "name": "ltr-rtl",
+    "priority": 100,
+    "search": ["ltr"],
+    "replace": ["rtl"],
+    "options": {
+      "scope": "*",
+      "ignoreCase": false
+    }
+  } ]
+} */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/* rtl:end:options */
+
+/* rtl:begin:options: {
+  "autoRename": true,
+  "stringMap":[ {
+    "name": "ltr-rtl",
+    "priority": 100,
+    "search": ["ltr"],
+    "replace": ["rtl"],
+    "options": {
+      "scope": "*",
+      "ignoreCase": false
+    }
+  } ]
+} */
+.rtl {
+    @import "../node_modules/bootstrap-rtl/dist/css/bootstrap-rtl.min.css";
+}
+
+/* rtl:end:options */
