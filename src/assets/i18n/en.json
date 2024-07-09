@@ -1,5 +1,13 @@
 {
-    "TITLE": "Welcome",
-    "DESCRIPTION": "This is the English version."
-  }
-  
+  "TITLE": "CSS Cleaner and Optimizer",
+  "UPLOAD_FILE": "Upload File",
+  "DOWNLOAD_CLEANED_CSS": "Download Cleaned CSS",
+  "CLEANED_CSS": "Cleaned CSS",
+  "CONFLICT_REPORT": "Conflict Report",
+  "SETTINGS": "Settings",
+  "IGNORE_RULES": "Ignore Rules (comma-separated)",
+  "THRESHOLD": "Conflict Detection Threshold",
+  "APPLY": "Apply",
+  "HOME": "Home",
+  "PAGE-TWO": "Page Two"
+}
