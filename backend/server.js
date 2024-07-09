@@ -4,11 +4,20 @@ const sass = require('sass');
 const css = require('css');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors'); // Import CORS
 
 const app = express();
 const port = 3000;
 
+// Enable CORS for all routes
+app.use(cors());
+
 // Configure Multer for file uploads
+/**
+ * Multer disk storage configuration.
+ *
+ * @type {multer.diskStorage}
+ */
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'uploads/');
@@ -25,7 +34,7 @@ if (!fs.existsSync('uploads')) {
 }
 
 // Endpoint for file upload
-app.post('/upload', upload.single('file'), (req, res) => {
+app.post('/api/upload', upload.single('file'), (req, res) => {
   const filePath = req.file.path;
 
   // Compile SCSS to CSS

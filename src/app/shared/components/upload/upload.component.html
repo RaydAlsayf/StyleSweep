@@ -1,1 +1,11 @@
-<p>upload works!</p>
+<div class="container">
+    <h1>Upload CSS/SCSS File</h1>
+    <form (submit)="onSubmit($event)">
+      <input type="file" (change)="onFileChange($event)" accept=".css,.scss" />
+      <button type="submit" [disabled]="!selectedFile">Upload</button>
+    </form>
+    <div *ngIf="uploadResponse">
+      <h2>Upload Response</h2>
+      <pre>{{ uploadResponse | json }}</pre>
+    </div>
+  </div>  
