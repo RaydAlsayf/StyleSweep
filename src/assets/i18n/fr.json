@@ -1,5 +1,13 @@
 {
-    "TITLE": "Accueillir",
-    "DESCRIPTION": "Ceci est la version française."
-  }
-  
+  "TITLE": "Nettoyeur et optimiseur CSS",
+  "UPLOAD_FILE": "Télécharger le fichier",
+  "DOWNLOAD_CLEANED_CSS": "Télécharger le CSS nettoyé",
+  "CLEANED_CSS": "CSS nettoyé",
+  "CONFLICT_REPORT": "Rapport de conflit",
+  "SETTINGS": "Paramètres",
+  "IGNORE_RULES": "Ignorer les règles (séparées par des virgules)",
+  "THRESHOLD": "Seuil de détection de conflit",
+  "APPLY": "Appliquer",
+  "HOME": "Accueil",
+  "PAGE-TWO": "Page Deux"
+}

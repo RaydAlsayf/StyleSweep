@@ -1,5 +1,13 @@
 {
-    "TITLE": "مرحبا",
-    "DESCRIPTION": "هذه النسخة العربية."
-  }
-  
+  "TITLE": "منظف ومحسن CSS",
+  "UPLOAD_FILE": "تحميل الملف",
+  "DOWNLOAD_CLEANED_CSS": "تنزيل CSS المنظف",
+  "CLEANED_CSS": "CSS المنظف",
+  "CONFLICT_REPORT": "تقرير التعارض",
+  "SETTINGS": "إعدادات",
+  "IGNORE_RULES": "تجاهل القواعد (مفصولة بفواصل)",
+  "THRESHOLD": "عتبة اكتشاف التعارض",
+  "APPLY": "تطبيق",
+  "HOME": "الصفحة الرئيسية",
+  "PAGE-TWO": "الصفحة الثانية"
+}
